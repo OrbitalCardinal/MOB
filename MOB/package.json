@@ -1,0 +1,17 @@
+{
+  "name": "mob",
+  "version": "1.0.0",
+  "description": "A bot that helps you save playlists",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Edson Raul Cepeda Marquez",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
