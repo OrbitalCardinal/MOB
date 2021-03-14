@@ -1,5 +1,4 @@
 const Discord = require('discord.js');
-const { ChangeStream } = require('mongodb');
 const client = new Discord.Client();
 const mongoProvider = require('./mongo_provider');
 
@@ -146,4 +145,4 @@ client.on('message', async msg => {
 })
 
 
-client.login(getToken());
+client.login(process.env.DISCORD_TOKEN);

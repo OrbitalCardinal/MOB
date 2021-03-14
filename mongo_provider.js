@@ -2,7 +2,8 @@ const { MongoClient } = require("mongodb");
 
 
 var fs = require('fs');
-var token = fs.readFileSync('mongo_token.txt').toString();
+// var token = fs.readFileSync('mongo_token.txt').toString();
+var token = process.env.MONGO_URI;
 const uri = token;
 const client = new MongoClient(uri, {useUnifiedTopology: true});
 
