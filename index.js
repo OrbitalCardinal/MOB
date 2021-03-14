@@ -137,7 +137,7 @@ client.on('message', async msg => {
       msg.channel.send(new Discord.MessageEmbed()
         .setTitle(`Playlist deleted correctly by ${msg.author.username}`)
         .setThumbnail(msg.author.displayAvatarURL())
-        .setColor(0xff00000)
+        .setColor(0xff0000)
       );
       
     }
