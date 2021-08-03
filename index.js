@@ -144,5 +144,26 @@ client.on('message', async msg => {
   }
 })
 
+client.on('message', async msg => {
+  if(!msg.content.startsWith('::random')) return;
+  try {
+    const fetchResults = await mongoProvider.fetch(msg.guild.id); 
+    const count = fetchResults.count
+    randomIndex = Math.floor(Math.random()  * count)
+    const playlist = fetchResults.playlists[randomIndex]
+    const playlistNum = playlist.id_num
+    const playlistName = playlist.name
+    const playlistURL = playlist.url
+    const playlistString = "{ #" + playlistNum + "  ["  + playlistName + "]  " + playlistURL + " }\n";
+    (await msg.channel.send("**Saved playlists:**\n*ID*\t\t*Name*\t\t\t\t*URL*```css\n" + playlistString + "```")).react('❤️');
+  } catch (error) {
+    console.log(error)
+  }
+  
+
+})
+
 
 client.login(process.env.DISCORD_TOKEN);
+// client.login(getToken());
+
