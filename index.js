@@ -54,9 +54,9 @@ client.on('message', async msg => {
     msg.channel.send(
       new Discord.MessageEmbed()
         .setTitle("List of MOB's commands")
-        .addField("Command", "::show\n\n::save\n\n::delete",true)
-        .addField("Parameter 1", "~~None~~\n\nPlaylists name\n\nID", true)
-        .addField("Parameter 2", "~~None~~\n\nPlaylists URL\n\n~~None~~", true)
+        .addField("Command", "::show\n\n::save\n\n::delete\n\n::random",true)
+        .addField("Parameter 1", "~~None~~\n\nPlaylists name\n\nID\n\n~~None~~", true)
+        .addField("Parameter 2", "~~None~~\n\nPlaylists URL\n\n~~None~~\n\n~~None~~", true)
         .setFooter("Doubts and suggestions to: raulcepedac@hotmail.com")
         .setColor(0x00ffff)
     );
