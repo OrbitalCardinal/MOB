@@ -155,7 +155,7 @@ client.on('message', async msg => {
     const playlistName = playlist.name
     const playlistURL = playlist.url
     const playlistString = "{ #" + playlistNum + "  ["  + playlistName + "]  " + playlistURL + " }\n";
-    (await msg.channel.send("**Saved playlists:**\n*ID*\t\t*Name*\t\t\t\t*URL*```css\n" + playlistString + "```")).react('❤️');
+    (await msg.channel.send("**A special obviously not random choice for you:**\n*ID*\t\t*Name*\t\t\t\t*URL*```css\n" + playlistString + "```")).react('❤️');
   } catch (error) {
     console.log(error)
   }
