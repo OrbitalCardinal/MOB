@@ -4,11 +4,13 @@
   "description": "A bot that helps you save playlists",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:server": "nodemon server.js"
   },
   "author": "Edson Raul Cepeda Marquez",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.1",
     "discord.js": "^12.5.1",
     "express": "^4.17.1",
     "mongodb": "^3.6.4"

@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const mongoProvider = require('./mongo_provider');
+const axios = require("axios");
 
 function getToken() {
   var fs = require('fs');
@@ -159,11 +160,22 @@ client.on('message', async msg => {
   } catch (error) {
     console.log(error)
   }
-  
+});
 
-})
+// Test api command
+client.on("message", async msg => {
+  try {
+    if(!msg.content.startsWith('::test')) return;
+    var body =  await axios.get("http://localhost:3000/api/show?server_id=" + msg.guild.id);
+    var data = body["data"];
+    console.log(data);
+    await msg.channel.send("TEST");
+  } catch(error) {
+    console.log(error);
+  }
+});
 
 
-client.login(process.env.DISCORD_TOKEN);
-// client.login(getToken());
+// client.login(process.env.DISCORD_TOKEN);
+client.login(getToken());
 
